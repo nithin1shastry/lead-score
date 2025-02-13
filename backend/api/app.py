@@ -20,7 +20,7 @@ langfuse = Langfuse(
 
 # LiteLLM API endpoint
 OPENAI_API_URL = os.getenv("OPENAI_API_URL")
-AUTH_API_PWD = os.getenv("AUTH_API_PWD")
+#AUTH_API_PWD = os.getenv("AUTH_API_PWD")
 
 API_KEY = os.getenv("API_KEY")
 HEADERS = {
@@ -280,8 +280,8 @@ def authenticate(request):
 @app.route('/api/score-lead', methods=['POST'])
 
 def score_lead():
-    if not authenticate(request):
-        return jsonify({"error": "Unauthorized"}), 401
+    # if not authenticate(request):
+    #     return jsonify({"error": "Unauthorized"}), 401
 
     data = request.get_json()
     
